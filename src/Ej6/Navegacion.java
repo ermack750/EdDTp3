@@ -52,11 +52,9 @@ public class Navegacion {
         System.out.println("El historial ha sido vaciado. Estás en el Menú Principal.");
     }
 
-    // Mostrar el historial completo
-    public void mostrarHistorial() {
-        System.out.println("Historial de navegación:");
-        for (String categoria : historial) {
-            System.out.println("- " + categoria);
-        }
+    // Método para obtener la categoría actual sin acceder directamente al historial
+    public String obtenerCategoriaActual() {
+        return historial.peek();
     }
 }
+

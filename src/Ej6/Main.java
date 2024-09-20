@@ -13,7 +13,8 @@ public class Main {
             String comando = Helper.leerString("Ingrese un comando: ");
 
             if (comando.equalsIgnoreCase("Salir")) {
-                System.out.println("Última categoría visitada: " + navegacion.historial.peek());
+                // Utilizamos el metodo público obtenerCategoriaActual() en lugar de acceder directamente a historial
+                System.out.println("Última categoría visitada: " + navegacion.obtenerCategoriaActual());
                 continuar = false;
             } else if (comando.startsWith("Ir a ")) {
                 String categoria = comando.substring(5);
@@ -36,7 +37,6 @@ public class Main {
         }
     }
 
-    // Método para mostrar el menú de opciones
     private static void mostrarMenu() {
         System.out.println("\n--- Menú de Navegación ---");
         System.out.println("Comandos disponibles:");
